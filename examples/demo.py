@@ -8,10 +8,11 @@ This is the flagship problem from the paper. S3FC separates
 Expected output: NMI ~ 0.966
 """
 
-from s3fc import S3FC, make_lines_and_sphere, nmi_score
+from s3fc import S3FC, nmi_score
+from s3fc.toy_generator import make_two_lines_and_sphere
 
 # Generate synthetic data: 2 lines + 1 sphere (300 points, 3 clusters)
-X, y_true = make_lines_and_sphere(
+X, y_true = make_two_lines_and_sphere(
     n_samples_per_structure=100,
     noise=0.0,
     random_state=42,
