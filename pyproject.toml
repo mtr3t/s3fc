@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "s3fc"
+version = "0.1.0"
+description = "Scalable Sparse Spectral Fusion Clustering for Multi-Manifold Data"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "cvxpy",
+    "joblib",
+    "tqdm",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
