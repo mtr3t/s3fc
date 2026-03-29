@@ -4,12 +4,15 @@ Multi-manifold clustering by fusing sparse subspace affinity with spectral affin
 
 ## Setup
 
-Requires Python 3.10+.
+Tested with Python 3.10 and CVXPY 1.7.5. Other versions may not work.
 
 ```bash
-git clone https://github.com/TODO/s3fc.git
+git clone https://github.com/mtr3t/s3fc.git
 cd s3fc
+conda create -n s3fc python=3.10 -y
+conda activate s3fc
 pip install -e .
+pip install cvxpy==1.7.5
 ```
 
 ## Run
