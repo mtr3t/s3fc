@@ -12,8 +12,9 @@ cd s3fc
 conda create -n s3fc python=3.10 -y
 conda activate s3fc
 pip install -e .
-pip install cvxpy==1.7.5
 ```
+
+All dependencies (including pinned versions) are handled by `pyproject.toml`.
 
 ## Run
 
