@@ -25,6 +25,20 @@ Module structure:
     - embedding.py: Spectral embedding via eigendecomposition
 """
 
+# Version-compatibility check for CVXPY (FLAIRS-39 reference version)
+import cvxpy as _cvxpy
+import warnings as _warnings
+
+_CVXPY_TESTED_VERSION = "1.7.5"
+if _cvxpy.__version__ != _CVXPY_TESTED_VERSION:
+    _warnings.warn(
+        f"S3FC was validated with CVXPY {_CVXPY_TESTED_VERSION}. "
+        f"You have CVXPY {_cvxpy.__version__}. "
+        "Results may differ from the FLAIRS-39 paper. "
+        "Pin cvxpy==1.7.5 to reproduce paper results.",
+        UserWarning, stacklevel=2,
+    )
+
 from .core import S3FC, S3FCParallel
 from .affinity import rbf_affinity, dense_rbf_affinity, sparse_rbf_affinity, self_tuning_affinity
 from .coefficients import sparse_coefficients, solve_single_coefficient
